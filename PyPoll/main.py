@@ -39,7 +39,7 @@ with open(csvpath, newline='') as csvfile:
 
 
         print(name, ""+"{:.2%}".format(fraction), votebycan, file=open("PyPoll.txt", "a"))
-   
+    
 
     #print(myDict)
     #Identify the winner using the dictionary created above- tricky for when we need the max based 
@@ -53,7 +53,7 @@ with open(csvpath, newline='') as csvfile:
     f.close()
 
     #Program Complete
-
+    
 
         
 

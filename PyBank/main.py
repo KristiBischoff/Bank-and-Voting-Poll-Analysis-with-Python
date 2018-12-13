@@ -1,5 +1,5 @@
 #import and read the csv file for budget_data
-f = open('PyBank.txt','w')
+
 import os
 import csv
 csvpath = os.path.join("budget_data.csv")
@@ -52,25 +52,42 @@ with open(csvpath, newline='') as csvfile:
     #Identify greatest increase in profit/loss
 
     def Maximum(Profit_diff):
-        return ((row[0]), max(Profit_diff))
+        return (max(Profit_diff))
     Maximum_incr = Maximum(Profit_diff)
 
 
         #Identify greatest decrease in profit/loss
     def Minimum(Profit_diff):
-        return (str(row[0]), min(Profit_diff))
+        return (min(Profit_diff))
     Minimum_decr = Minimum(Profit_diff)
     
     
     #print results
-    print("Results", file=open("PyBank.txt", "a"))
-    print("Total Months: ", counter, file=open("PyBank.txt", "a"))
-    print("Total: ", Net_profit_loss, file=open("PyBank.txt", "a"))
+    print("Results")
+    print("Total Months: ", counter)
+    print(f"Total: ${Net_profit_loss}")
     #print(Profit_diff, file=open("PyBank.txt", "a"))
-    print("Average Change: ", Average_diff, file=open("PyBank.txt", "a"))
-    print("Greatest Increase in Profits: ", Maximum_incr, file=open("PyBank.txt", "a"))
-    print("Greatest Decrease in Profits: ", Minimum_decr, file=open("PyBank.txt", "a"))
-f.close()
+    print(f"Average Change: ${Average_diff}")
+    print(f"Greatest Increase in Profits: ${Maximum_incr}")
+    print(f"Greatest Decrease in Profits: ${Minimum_decr}")
+
+    with open('PyBank.txt','w') as output_file:
+        output_file.write("Results\n")
+        output_file.write(f"Total Months: {counter}\n")
+        output_file.write(f"Total: ${Net_profit_loss}\n")
+        #print(Profit_diff, file=open("PyBank.txt", "a"))
+        output_file.write(f"Average Change: ${Average_diff}\n")
+        output_file.write(f"Greatest Increase in Profits: ${Maximum_incr}\n")
+        output_file.write(f"Greatest Decrease in Profits: ${Minimum_decr}\n")
+
+    #print("Results", file=open("PyBank.txt", "a"))
+    #print("Total Months: ", counter, file=open("PyBank.txt", "a"))
+    #print("Total: ", ""+"{:$}".format(Net_profit_loss), file=open("PyBank.txt", "a"))
+    #print(Profit_diff, file=open("PyBank.txt", "a"))
+    #print("Average Change: ", ""+"{:$}".Average_diff, file=open("PyBank.txt", "a"))
+    #print("Greatest Increase in Profits: ", Maximum_incr, file=open("PyBank.txt", "a"))
+    #print("Greatest Decrease in Profits: ", Minimum_decr, file=open("PyBank.txt", "a"))
+
 
 #Program Complete
 

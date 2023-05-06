@@ -1,6 +1,4 @@
-# Python programming
-
-Company financial analysis and voting poll analysis
+# Company financial analysis and voting poll analysis
 
 Follow the PyBank and PyPoll folders for their corresponding analyses. 
 
